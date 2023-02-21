@@ -1,0 +1,50 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'cashflow_Transaction_list' %}">
+    Transaction Listing
+    </a>
+</p>
+    
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{form.errors}}
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="category">category: </label>
+      <input class="form-control col-sm-10" id="category" type="text" name="category" value="{{ object.category }}">
+  </div>
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="type">type: </label>
+      <input class="form-control col-sm-10" id="type" type="text" name="type" value="{{ object.type }}">
+  </div>
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="status">status: </label>
+      <input class="form-control col-sm-10" id="status" type="text" name="status" value="{{ object.status }}">
+  </div>
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="created">created: </label>
+      <input class="form-control col-sm-10" id="created" type="datetime-local" name="created" value="{{ object.created }}" disabled>
+  </div>
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="value">value: </label>
+      <input class="form-control col-sm-10" id="value" type="text" name="value" value="{{ object.value }}">
+  </div>
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="description">description: </label>
+      <input class="form-control col-sm-10" id="description" type="text" name="description" value="{{ object.description }}">
+  </div>
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="last_updated">last_updated: </label>
+      <input class="form-control col-sm-10" id="last_updated" type="datetime-local" name="last_updated" value="{{ object.last_updated }}" disabled>
+  </div>
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="accounts">accounts: </label>
+      <input class="form-control col-sm-10" id="accounts" type="text" name="accounts" value="{{ object.accounts }}">
+  </div>
+  <input type="submit" value="Save" class="btn btn-primary">
+</form>
+
+{% endblock %}

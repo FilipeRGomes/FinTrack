@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="m-2"><h4>cashflow</h4></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'cashflow:Category_list' %}">Category Listing</a></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'cashflow:Account_list' %}">Account Listing</a></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'cashflow:Transaction_list' %}">Transaction Listing</a></div>
+{% endblock %}

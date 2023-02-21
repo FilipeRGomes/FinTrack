@@ -1,0 +1,25 @@
+<div class="modal-dialog modal-lg">
+    <div class="modal-content">
+              <div class="modal-header">
+                <a class="btn btn-primary" href="{{ object.get_list_url }}">X</a>
+                <h4 class="modal-title" id="myModalLabel">Pratica {{ object.pk }}</h4>
+              </div>
+              <div class="modal-body">
+                  <p>Fuck yeah!</p>
+              </div>
+              <div class="modal-footer">
+              </div>
+    </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
+
+<script>
+  //Redirect to list view url
+  const Url = "{{ object.get_list_url }}"
+  setTimeout(function() { 
+    window.location.replace(Url);
+  }, 1000);
+  //Doesn't work properli 
+  //$('body').on('hidden.bs.modal', '.modal', function () {
+  //    $(this).removeData('bs.modal');
+  //});
+</script>
